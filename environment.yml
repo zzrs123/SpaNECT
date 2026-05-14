@@ -1,0 +1,37 @@
+name: spanect
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.16
+  - pytorch=2.2.2
+  - torchvision=0.17.2
+  - torchaudio=2.2.2
+  - pytorch-cuda=12.1
+  - igraph=0.10.12
+  - leidenalg=0.10.2
+  - networkx=3.4.2
+  - munkres=1.1.4
+  - pillow=11.1.0
+  - pip
+  - pip:
+      - anndata==0.9.1
+      - byol-pytorch==0.6.0
+      - h5py==3.8.0
+      - matplotlib==3.7.2
+      - numpy==2.2.6
+      - opencv-python==4.7.0.72
+      - pandas==2.0.1
+      - pyyaml==6.0
+      - scanpy==1.9.3
+      - scikit-learn==1.2.2
+      - scipy==1.11.4
+      - seaborn==0.12.2
+      - tqdm==4.65.0
+      - umap-learn==0.5.3
+      - squidpy
+      - mygene
+      - mudata
+      - xlsxwriter

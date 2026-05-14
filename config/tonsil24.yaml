@@ -1,0 +1,77 @@
+# Multi-omics configuration template
+# For RNA + ATAC/ADT datasets
+
+dataset: TONSIL
+data_path: /home/dugaoyuan/AAA-new-base/ztest_tmvc_model/1-04-full-model-can/FullModel/Train_Data/TONSIL_NEW
+save_root: ./pretrained_0613
+results_save_path: ./results_0613/
+device: cuda:1
+seed: 280238
+k: 16
+MM_epochs: 200
+mm_lr: 0.0002
+kl_weight: 0.5
+align_weight: 2.0
+out_dim: 128
+
+# Multi-omics specific settings
+omics2_key: X_adt
+omics2_pipeline: auto
+omics2_dim: 0
+omics2_standardize: true
+omics2_log1p: false
+
+rna_preprocess_in_multiomics: true
+rna_pca_dim: 0
+standardize_modalities: false
+
+single_branch_configs:
+  gene:
+    hid_dims:
+    - 128
+    - 32
+    lr: 0.0002
+    epochs: 800
+    loss_lam: 0
+    loss_gam: 0.5
+    loss_s: 0.1
+    loss_tau: 0.5
+    pd1: 0.2
+    pm1: 0.2
+    pd2: 0.5
+    pm2: 0.4
+  omics2:
+    hid_dims:
+    - 64
+    - 16
+    lr: 5.0e-05
+    epochs: 200
+    loss_lam: 1.0
+    loss_gam: 0.4
+    loss_s: 0.1
+    loss_tau: 0.1
+    pd1: 0.1
+    pm1: 0.2
+    pd2: 0.3
+    pm2: 0.2
+  celltype:
+    hid_dims:
+    - 16
+    - 16
+    lr: 0.0002
+    epochs: 1000
+    loss_lam: 2
+    loss_gam: 0.7
+    loss_s: 0.3
+    loss_tau: 1.0
+    pd1: 0.3
+    pm1: 0.3
+    pd2: 0.1
+    pm2: 0.3
+
+refine_k: 30
+
+eval:
+  clusterer: kmeans
+  repeat: 3
+  radius: 50

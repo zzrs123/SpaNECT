@@ -1,0 +1,55 @@
+# config.yaml
+
+# 基础配置
+dataset: "DLPFC"
+data_path: "/home/dugaoyuan/AAA-new-base/ztest_tmvc_model/1-04-full-model-can/FullModel/DLPFC"
+save_root: "./pretrained_0613"
+results_save_path: "./results_0613/"
+device: "cuda:6"
+seed: 788924
+k: 28
+
+# 超参数配置
+MM_epochs: 300
+mm_lr: 0.0005
+kl_weight: 0.0001
+align_weight: 0.01
+out_dim: 64
+# 单模态模型的配置
+single_branch_configs:
+  gene:
+    hid_dims: [16, 16]
+    lr: 0.01
+    epochs: 600
+    loss_lam: 1.2
+    loss_gam: 0.4
+    loss_s: 0.2
+    loss_tau: 2.0
+    pd1: 0.4
+    pm1: 0.6
+    pd2: 0.2
+    pm2: 0.2
+  image:
+    hid_dims: [16, 16]
+    lr: 0.002
+    epochs: 1200
+    loss_lam: 1.2
+    loss_gam: 0
+    loss_s: 0.3
+    loss_tau: 0.5
+    pd1: 0.2
+    pm1: 0.2
+    pd2: 0.7
+    pm2: 0.4
+  celltype:
+    hid_dims: [512, 32]
+    lr: 0.01
+    epochs: 1200
+    loss_lam: 0.1
+    loss_gam: 1.0
+    loss_s: 0.3
+    loss_tau: 0.5
+    pd1: 0.5
+    pm1: 0.2
+    pd2: 0.1
+    pm2: 0.3
