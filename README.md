@@ -101,7 +101,7 @@ If R is not automatically detected on your machine, set:
 export R_HOME=/path/to/your/R
 export R_LIBS_USER=/path/to/your/R/library
 ```
-The \mclust` dependency is only required when using `evaluate_mclust`.`
+The `mclust` dependency is only required when using `evaluate_mclust`.
 
 ## Quick Start
 
