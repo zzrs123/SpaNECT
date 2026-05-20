@@ -6,6 +6,8 @@
 
 A Python research codebase for spatial niche identification and characterization from spatial transcriptomics, spatial multimodal, and spatial multi-omics data.
 
+<img src="docs/SpaNECT.jpg" alt="SpaNECT framework" width="85%">
+
 </div>
 
 ## Background
